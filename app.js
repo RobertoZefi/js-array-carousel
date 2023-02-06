@@ -18,22 +18,37 @@ arrowRight.addEventListener('click', function() {
     let slideCorrente = slideElement[slideCounter]
     slideCorrente.classList.remove('active')
 
-    slideCounter += 1
+    if (slideCounter === 4){
+        slideCounter=0
+    } else {
+        slideCounter++
+    }
+    
+    //slideCounter += 1
 
     let slideSuccessiva = slideElement[slideCounter]
     slideSuccessiva.classList.add('active')
     
     console.log(slideCounter)
-
-    if (slideCounter == 4){
-        slideCounter = 0
-
-        slideCorrente = slideElement[slideCounter]
-        slideCorrente.classList.remove('active')
-
-        slideSuccessiva = slideElement[slideCounter]
-        slideSuccessiva.classList.add('active')
-    }
-
 })
 
+
+arrowLeft.addEventListener('click', function() {
+    console.log(arrowLeft)
+
+    let slideCorrente = slideElement[slideCounter]
+    slideCorrente.classList.remove('active')
+
+    if (slideCounter === 0){
+        slideCounter=4
+    } else {
+        slideCounter--
+    }
+
+    // slideCounter -= 1
+
+    let slideSuccessiva = slideElement[slideCounter]
+    slideSuccessiva.classList.add('active')
+    
+    console.log(slideCounter)
+})
